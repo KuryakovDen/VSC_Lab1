@@ -1,0 +1,106 @@
+.content h1{
+    text-align: center;
+}
+
+.header-page {
+    border: 2px solid black;
+    width:auto;
+    height:200px;
+}
+
+.header-menu {
+    width:auto;
+    height:100px;
+}
+
+.header-menu ul li {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid black;
+    padding: 10px;
+    margin:10px; 
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;
+    list-style-type: none;
+    float: left;
+}
+
+.content .main-page{
+    width: 79.5%;
+    height: 500px;
+    border: 2px solid green;
+    background-color: goldenrod;
+}
+
+.logo img {
+    width:auto;
+    height:100px;
+    display:block;
+    border: 1px solid black;
+    margin: auto;
+}
+
+.content .main-page .main-post {
+    width:60px;
+    height: 60px;
+    background-color: aqua;
+}
+
+.form {
+    display: block;
+    width: 20%;
+    height: 500px;;
+    background-color: crimson;
+    border: 1px solid black;
+    float: right;
+    margin-top: -502px;;
+}
+
+.form h2 {
+    text-align: center;
+    color: floralwhite;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.form .block-1, .block-2, .block-3 {
+
+    width: auto;
+    height: auto;
+}
+
+.form .block-1 {
+    width: auto;
+    height: 100px;
+}
+
+.form .block-2 input {
+    margin: auto;
+}
+
+.footer-page {
+    background-color: cyan;
+    border: 1px solid black;
+    width:100%;
+    height:200px;
+    margin-top: 0px;
+}
+
+.footer-page .footer-info ul li {
+    display: inline-block;
+    list-style-type: none;
+    border: 1px solid black;
+    padding: 10px;
+    margin:20px 20px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;
+    
+} 
+
+.copyright {
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    font-style: italic;
+    font-size: 20px;
+    margin: 10px 5px;
+}
