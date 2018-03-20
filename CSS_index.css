@@ -1,0 +1,207 @@
+.header-page {
+    border: 2px solid black;
+    width:auto;
+    height:200px;
+}
+
+.header-menu {
+    width:auto;
+    height:100px;
+    display: flex;
+    justify-content: space-around;
+    max-width: 100%;
+
+}
+
+.header-menu ul li {
+    align-items: center;
+    padding: 10px;
+    margin:10px; 
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;
+    list-style-type: none;
+    float: left;
+}
+
+.header-menu ul li:hover {
+    border-bottom: 2px solid black;
+    cursor: pointer;
+    background-color: yellowgreen;
+}
+
+.header-menu ul li a {
+    text-decoration: none;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+}
+
+
+.logo img {
+    width:auto;
+    height:100px;
+    border: 1px solid black;
+    max-width: 20%;
+    box-sizing: border-box;
+    margin-top: 15px;
+}
+
+.main-image {
+    height: 600px;
+    width: 100%;
+    max-width: 100%;
+
+}
+
+.advantages-container {
+    display: flex;
+    justify-content: center;
+}
+
+.advantages {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    flex-wrap: wrap;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.advantages-items {
+    width: 30%;
+    padding: 15px;
+} 
+
+.advantages-items:hover {
+    border: 3px dashed yellowgreen;
+}
+
+.products {
+    width: 270px;
+    height: 180px;
+}
+
+.form {
+    display: block;
+    width: 20%;
+    height: 500px;;
+    background-color: crimson;
+    border: 1px solid black;
+    float: right;
+    margin-top: -502px;
+    font-size: 23px;
+}
+
+.form h2 {
+    text-align: center;
+    color: floralwhite;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.form .block-1, .block-2, .block-3 {
+
+    width: auto;
+    height: auto;
+}
+
+.form .block-1 {
+    width: auto;
+    height: 100px;
+}
+
+.form .block-2 input {
+    margin: auto;
+}
+
+.footer-page {
+    background-color: cyan;
+    border: 1px solid black;
+    width:100%;
+    height:150px;
+    margin-top: 0px;
+}
+
+.footer-page .footer-info ul li {
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+    float: left;
+    list-style-type: none;
+    border: 1px solid black;
+    padding: 10px;
+    margin:20px 20px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;
+
+    
+} 
+
+.footer-page .footer-info ul li img{
+	padding-right:5px;
+}
+
+.footer-page .footer-info ul li a {
+    text-decoration: none;
+}
+
+.copyright p{
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    font-style: italic;
+    font-size: 20px;
+    margin: 50px 20px;
+    display: block;
+    float: left;
+}
+
+/*                                                           registration.html                                           */
+
+#registration-info {
+    display: block;
+    width: 90%;
+    height: 700px;
+    background-color: bisque;
+    border: 2px solid black;
+    margin: auto;
+    
+}
+
+#registration-info h2{
+    text-align: center;
+}
+
+#registration-field {
+    display: block;
+    width: 80%;
+    height: 85%;
+    background-color: aquamarine;
+    border: 1px solid black;
+    margin: auto;
+}
+
+#fio, #sex, #contact-info, #birthday-date, #favorite-products {
+    width: 80%;
+    float: left;
+    display: block;
+}
+
+#submit-button {
+    float: left;
+    display: block;
+    margin-top: 140px;
+    margin-left: auto;
+}
+
+
+/*
+@media screen and (max-width 768px) {              //Медиа-запрос для маленьких экранов
+    .advantages-items {
+        width: 45%;
+    }
+}
+*/
