@@ -23,14 +23,25 @@
              </nav>
         </header>
         <main>
-            <img src="E:\NSTU\2 semestr\DB and IS\РИСиБД\Site\images\ferma.jpg" alt="" class="main-image">
+            <div class="button-container">
+                <button class="my-button" id="button-advice">
+                        Совет дня
+                </button>
+                <button class="my-button" id="button-true">
+                        Правда
+                </button>
+                <button class="my-button" id="button-false">
+                        Ложь
+                </button>
+            </div>
+            <img src="images\ferma.jpg" alt="" class="main-image">
             <h1 style="text-align:center">Наши товары</h1>
             <div class="advantages-container">
                 <div class="advantages">
                     <div class="advantages-items">
-                        <a href="#"><img src="https://static.tildacdn.com/tild6235-3237-4964-b866-356635663231/yogurtbanochkichernika.jpg" class="products">
-                        <h2>Йогурт</h2></a>
-                        <p>Изготовлен только из свежевого молока!</p>
+                        <a href="#"><img src="https://static.tildacdn.com/tild6235-3237-4964-b866-356635663231/yogurtbanochkichernika.jpg" class="products"></a>
+                        <h2>Йогурт</h2>
+                        <p>Изготовлен только из свежего молока!</p>
                     </div>
                     <div class="advantages-items">
                         <a href="#"><img src="https://static.tildacdn.com/tild6131-6438-4066-a661-313533633362/577207f5e88e6f493abeebe388a7e9173f471c08.jpg" class="products"></a>
@@ -59,6 +70,53 @@
                     </div>
                 </div>
             </div>
+            <div class="form-name">
+                    <h2>Форма регистрации</h2>
+            </div>
+            <div class="form">
+                <div class="block-1">
+                    <form action="Registration.html" method="POST">
+                        <fieldset>
+                            <legend>Регистрация пользователя</legend>
+                            <label for="login">Введите ваш логин</label><br>
+                            <input type="text" id="login"required pattern="[a-zA-Z]\w*\d+\w*"><br>
+                            <label for="password1">Придумайте пароль</label><br>
+                            <input type="password" id="password1" required pattern="\w{4,20}"><br>
+                            <label for="password2">Повторите ваш пароль</label><br>
+                            <input type="password" id="password2" required pattern="\w{4,20}"><br><br>
+                            <fieldset>
+                                    <legend>Капча</legend>
+                                    <input type="text" id="random-text">
+                                    <input type="button" id="refresh-button" value="Обновить" onclick="GenerateCaptcha();"><br> 
+                                    <label for="captcha-text">Введите текст</label>
+                                    <input type="text" id="captcha-text" required>
+                             </fieldset>
+                            <input type="submit" value="Отправить" id="submit"><br><br>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+            <div id="button-up">
+
+            </div>
+            <div id="modal-window-advice" class="modal">
+                <div class="modal-content">
+                    <span class="close">Х</span>
+                    <p>Модальное окно</p>
+                </div>
+            </div>
+            <div id="modal-window-true" class="modal">
+                    <div class="modal-content">
+                        <span class="close">Х</span>
+                        <p>Правда</p>
+                    </div>
+            </div>
+            <div id="modal-window-false" class="modal">
+                    <div class="modal-content">
+                        <span class="close">Х</span>
+                        <p>Ложь</p>
+                    </div>
+            </div>
         </main>
         <footer class="footer-menu">
             <ul class="menu">
@@ -71,9 +129,9 @@
                 <a href="#"><img src="https://static.tildacdn.com/tild3663-3031-4335-b531-366464616561/noroot.png"></a>
             </div>
             <div class="footer-social">
-                <a href="#" target="_blank"><img src="E:\NSTU\2 semestr\DB and IS\РИСиБД\Site\images\icons\e-mail.png" alt="E-mail"></a>
-                <a href="https://www.instagram.com/fermer_centr/" target="_blank"><img src="E:\NSTU\2 semestr\DB and IS\РИСиБД\Site\images\icons\instagram.png" alt="Instagram"></a>
-                <a href="https://vk.com/fermer.centr" target="_blank"><img src="E:\NSTU\2 semestr\DB and IS\РИСиБД\Site\images\icons\vk.jpg" alt="Vkontakte"></a>
+                <a href="#" target="_blank"><img src="images\icons\e-mail.png" alt="E-mail"></a>
+                <a href="https://www.instagram.com/fermer_centr/" target="_blank"><img src="images\icons\instagram.png" alt="Instagram"></a>
+                <a href="https://vk.com/fermer.centr" target="_blank"><img src="images\icons\vk.jpg" alt="Vkontakte"></a>
             </div>
         </footer>
     </body>
