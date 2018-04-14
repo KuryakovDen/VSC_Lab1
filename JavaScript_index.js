@@ -1,4 +1,4 @@
-//Поверка на совпадение паролей при регистрации
+//Поверка на совпадение паролей и капчи при регистрации
 window.onload  = function () {
 
     var idSubmit=this.document.getElementById('submit');
@@ -7,12 +7,16 @@ window.onload  = function () {
         var fieldPassword1=document.getElementById('password1').value;
         var fieldPassword2=document.getElementById('password2').value;
         var fieldLogin=document.getElementById('login').value;
-        if (fieldPassword1==fieldPassword2) {
-            alert('Поздравляем! Все успешно зарегистрировались:)');
-        } else if (fieldPassword1==' '|| fieldPassword2==' ' || fieldLogin==' ') {
-            alert('Заполните пустые поля!');
+        var fieldCaptchaExample=document.getElementById('random-text').value;
+        var fieldCaptchaAnswer=document.getElementById('captcha-text').value;
+        
+
+        if (fieldPassword1!='' && fieldPassword2!='' && fieldCaptchaAnswer!='' && fieldPassword1==fieldPassword2 && fieldCaptchaExample==fieldCaptchaAnswer) {
+            $('#modal-window-true').css("display", "block");
+        } else if (fieldPassword1==''|| fieldPassword2=='' || fieldLogin=='' || fieldCaptchaExample=='' || fieldCaptchaAnswer=='') {
+            $('#modal-window-empty').css("display", "block");
         } else {
-            alert('Ваши пароли не совпадают!');
+            $('#modal-window-false').css("display", "block");
         }
     }
 }
@@ -32,6 +36,9 @@ var tipOfDay = [
 ];
 
 
+
+
+
 /* Вывод случайного "Совета дня"
 window.onload  = function () {
     var randomIndex = Math.floor(Math.random() * tipOfDay.length);
@@ -40,9 +47,11 @@ window.onload  = function () {
 
 
 //Модальное окно "Совет дня"
-$(document).ready(function () {
+var modalWindowFirst=$(document).ready(function () {
     $('#button-advice').click(function () {
         $('#modal-window-advice').css("display", "block");
+        var randomIndex = Math.floor(Math.random() * tipOfDay.length);
+        $('.span-advice').innerHTML=tipOfDay[randomIndex];
     });
 
     $('.close').click(function () {
@@ -52,13 +61,24 @@ $(document).ready(function () {
 
 
 //Модальное окно "Правда"
-$(document).ready(function () {
+var modalWindowSecond=$(document).ready(function () {
     $('#button-true').click(function () {
         $('#modal-window-true').css("display", "block");
     });
 
     $('.close').click(function () {
         $('#modal-window-true').css("display", "none");
+    });
+});
+
+//Модальное окно "Ложь"
+var modalWindowThird=$(document).ready(function () {
+    $('#button-false').click(function () {
+        $('#modal-window-empty').css("display", "block");
+    });
+
+    $('.close').click(function () {
+        $('#modal-window-empty').css("display", "none");
     });
 });
 
@@ -78,6 +98,7 @@ $(document).ready(function () {
 function GenerateCaptcha () {
     var captchaArray = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','0','1','2','3','4','5','6','7','8','9'];
     for (var i=0;i<captchaArray.length;i++) {
+        
         var a = captchaArray[Math.floor(Math.random()*captchaArray.length)];
         var b = captchaArray[Math.floor(Math.random()*captchaArray.length)];
         var c = captchaArray[Math.floor(Math.random()*captchaArray.length)];
@@ -117,20 +138,6 @@ function GenerateCaptcha () {
         ('#random-text').value = result;
     });*/
 };
-
-//Проверка на совпадение капчи
-$(document).ready(function () {
-    $('#submit').click(function () {
-        var a= $('#random-text').value;
-        var b = $('#captcha-text').value;
-        if (a==b) {
-            return true;
-        } else {
-            return false;
-        }
-    });
-});
-
 //Реализация кнопки "Наверх"
 $(document).ready(function(){
     /**
@@ -152,7 +159,6 @@ $(document).ready(function(){
         }, 500);
         return false;
     });
-    
 });
 
 /*

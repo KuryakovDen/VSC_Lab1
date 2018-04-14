@@ -238,12 +238,29 @@
 }
 
 .close {
+    display: flex;
+    justify-content: flex-start;
     cursor: pointer;
     float: right;
-    font-size: 28px;
+    font-size: 18px;
     font-weight: bold;
 }
 
+
+.close-container:hover {
+    display: flex;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    border-radius: 30%;
+    float: right;
+    cursor: pointer;
+}
+
+.close-p {
+    float: left;
+}
 
 /*                                                           registration.html                                           */
 

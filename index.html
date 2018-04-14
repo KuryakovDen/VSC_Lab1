@@ -25,13 +25,13 @@
         <main>
             <div class="button-container">
                 <button class="my-button" id="button-advice">
-                        Совет дня
+                        <span >Совет дня</span>
                 </button>
                 <button class="my-button" id="button-true">
-                        Правда
+                        <span >Правда</span>
                 </button>
                 <button class="my-button" id="button-false">
-                        Ложь
+                        <span >Ложь</span>
                 </button>
             </div>
             <img src="images\ferma.jpg" alt="" class="main-image">
@@ -86,7 +86,7 @@
                             <input type="password" id="password2" required pattern="\w{4,20}"><br><br>
                             <fieldset>
                                     <legend>Капча</legend>
-                                    <input type="text" id="random-text">
+                                    <input type="text" id="random-text" disabled>
                                     <input type="button" id="refresh-button" value="Обновить" onclick="GenerateCaptcha();"><br> 
                                     <label for="captcha-text">Введите текст</label>
                                     <input type="text" id="captcha-text" required>
@@ -101,22 +101,52 @@
             </div>
             <div id="modal-window-advice" class="modal">
                 <div class="modal-content">
-                    <span class="close">Х</span>
-                    <p>Модальное окно</p>
+                    <div class="close-container">
+                        <div class="close">
+                            X
+                        </div>
+                    </div>
+                    <div class="close-p">
+                        <span class="span-advice">Модальное окно</span>
+                    </div>
                 </div>
-            </div>
+        </div>
             <div id="modal-window-true" class="modal">
+                <div class="modal-content">
+                    <div class="close-container">
+                        <div class="close">
+                            X
+                        </div>
+                    </div>
+                    <div class="close-p">
+                        <span class="span-true">Поздравляем, вы успешно зарегистрировались :)</span>
+                    </div>
+                </div>
+        </div>
+            <div id="modal-window-empty" class="modal">
                     <div class="modal-content">
-                        <span class="close">Х</span>
-                        <p>Правда</p>
+                        <div class="close-container">
+                            <div class="close">
+                               X 
+                            </div>
+                        </div>
+                        <div class="close-p">
+                            <span class="span-empty">Заполните все поля формы!</span>
+                        </div>
                     </div>
             </div>
             <div id="modal-window-false" class="modal">
-                    <div class="modal-content">
-                        <span class="close">Х</span>
-                        <p>Ложь</p>
+                <div class="modal-content">
+                    <div class="close-container">
+                        <div class="close">
+                           X 
+                        </div>
                     </div>
-            </div>
+                    <div class="close-p">
+                        <span ="span-false">Ваши пароли не совпалают!</span>
+                    </div>
+                </div>
+        </div>
         </main>
         <footer class="footer-menu">
             <ul class="menu">
