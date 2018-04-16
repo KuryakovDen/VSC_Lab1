@@ -36,7 +36,7 @@ var tipOfDay = [
 ];
 
 
-
+var url = "Registration.html";
 
 
 /* Вывод случайного "Совета дня"
@@ -51,14 +51,13 @@ var modalWindowFirst=$(document).ready(function () {
     $('#button-advice').click(function () {
         $('#modal-window-advice').css("display", "block");
         var randomIndex = Math.floor(Math.random() * tipOfDay.length);
-        $('.span-advice').innerHTML=tipOfDay[randomIndex];
+        $('.span-advice')[0].innerHTML = tipOfDay[randomIndex];
     });
 
     $('.close').click(function () {
         $('#modal-window-advice').css("display", "none");
     });
 });
-
 
 //Модальное окно "Правда"
 var modalWindowSecond=$(document).ready(function () {
@@ -68,6 +67,10 @@ var modalWindowSecond=$(document).ready(function () {
 
     $('.close').click(function () {
         $('#modal-window-true').css("display", "none");
+    });
+
+    $('.another-page').click(function () {
+        $(location).attr('href', url);
     });
 });
 
@@ -97,46 +100,18 @@ $(document).ready(function () {
 //Капча
 function GenerateCaptcha () {
     var captchaArray = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','0','1','2','3','4','5','6','7','8','9'];
-    for (var i=0;i<captchaArray.length;i++) {
-        
-        var a = captchaArray[Math.floor(Math.random()*captchaArray.length)];
-        var b = captchaArray[Math.floor(Math.random()*captchaArray.length)];
-        var c = captchaArray[Math.floor(Math.random()*captchaArray.length)];
-        var d = captchaArray[Math.floor(Math.random()*captchaArray.length)];
-        var e = captchaArray[Math.floor(Math.random()*captchaArray.length)];
-        var f = captchaArray[Math.floor(Math.random()*captchaArray.length)];
-        var g = captchaArray[Math.floor(Math.random()*captchaArray.length)];
-        
+    var symbolsArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g','h'];
+	var result = '';
+	
+    for (var i=0;i<8;i++) {
+        //for (var j=0;j<captchaArray.length;j++) {
+            symbolsArray[i]=captchaArray[Math.floor(Math.random()*captchaArray.length)];
+            result += symbolsArray[i]+' ';
+        //}
     };
 
-    var result = a + ' ' + b + ' ' + ' ' + c + ' ' + d + ' ' + e + ' '+ f + ' ' + g;
-
     document.getElementById("random-text").value = result;
-    /*
-        var symbolsArray = [a, b, c, d, e, f, g];
 
-        for (var j=0;j<symbolsArray.length;j++) {
-            var result=symbolsArray[j]+' ';
-        }
-    */
-
-
-        /*
-        $('#refresh-button').click(function () {
-            $('#random-text').value = result;
-        });
-        */
-       
-    /*
-    var symbolsArray = [a, b, c, d, e, f, g];
-
-    for (var j=0;j<symbolsArray.length;j++) {
-        var result=symbolsArray[j]+' ';
-    }
-    return result;
-    $(document).ready(function () {
-        ('#random-text').value = result;
-    });*/
 };
 //Реализация кнопки "Наверх"
 $(document).ready(function(){
@@ -156,7 +131,7 @@ $(document).ready(function(){
     $('#button-up').click(function () {
         $('body,html').animate({
             scrollTop: 0
-        }, 500);
+        }, 1000);
         return false;
     });
 });

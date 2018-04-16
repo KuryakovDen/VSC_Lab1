@@ -262,6 +262,14 @@
     float: left;
 }
 
+input[type="text"]:valid{
+    color:#2ecc71;    
+}
+
+input[type="text"]:invalid{
+    color:#e74c3c;    
+}
+
 /*                                                           registration.html                                           */
 
 #registration-info {
